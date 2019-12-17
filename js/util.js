@@ -41,9 +41,9 @@ export class Util {
         console.log(`listen time is: ${t.getFullYear()}-${t.getMonthName()}`);
         let music_widget = document.querySelector('#music-widget');
         music_widget.innerHTML = `
-          <h3>Recent Listens:</h3>
-          <div id="disclaimer">Listen history courtesty of ListenBrainz</div>
-          <div id="track-list">
+          <h3 class="card-title">Recent Listens:</h3>
+          <div id="disclaimer" class="card-subtitle" mb-2 text-muted>Listen history courtesty of ListenBrainz</div>
+          <div id="track-list" class="card-body">
             <table class="table">
               <thead>
                 <tr>
@@ -73,7 +73,7 @@ export class Util {
         let track = entry.track_metadata;
         let row = document.createElement("tr");
         row.innerHTML = `
-          <td>${t_stamp.getMonthName()} ${t_stamp.getDate()} ${t_stamp.getFullYear()}}</td>
+          <td>${t_stamp.getMonthName()} ${t_stamp.getDate()} ${t_stamp.getFullYear()}</td>
           <td>${track.artist_name}</td>
           <td>${track.track_name}</td>
         `;
