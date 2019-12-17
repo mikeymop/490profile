@@ -95,22 +95,22 @@ export class Util {
     createProjectWidget() {
         let project_widget = document.querySelector("#project-widget");
         project_widget.innerHTML = `
-          <h3 class="card">Recent Projects:</h3>
+          <h3 >Recent Projects:</h3>
           <table>
             <tr>
               <th>
-                <div class="card" style="width: 18rem;">
-                  <img src="http://defrances.co/img/icon.png" class="card-image" style="width: 5rem; height: 5rem"></img>
-                  <div class="card-title">Personal Blog <a href="http://defrances.co"><i>(Link)</i></a></div>
+                <div class="card" style="width: 18rem; padding: 10px; margin: .8rem">
+                  <img src="http://defrances.co/img/icon.png" class="card-image" style="margin: auto; width: 5rem; height: 5rem"></img>
+                  <div class="card-title" style="margin: 5px;">Personal Blog <a href="http://defrances.co"><i>(Link)</i></a></div>
                   <div class="card-body">
                       <p class="card-text">My Personal Website, written using node.js and hugo</p>
                   </div>
                 </div>
               </th>
               <th>
-                <div class="card" style="width: 18rem;">
-                  <img src="https://via.placeholder.com/150" class="card-image" style="width: 5rem; height: 5rem"></img>
-                  <div class="card-title">Grader Gater <a href="https://web.njit.edu/~md537/dev"><i>(Link)</i></a></div>
+                <div class="card" style="width: 18rem; padding: 10px; margin: .8rem">
+                  <img src="https://via.placeholder.com/150" class="card-image" style="margin: auto; width: 5rem; height: 5rem"></img>
+                  <div class="card-title" style="margin: 5px;">Grader Gater <a href="https://web.njit.edu/~md537/dev"><i>(Link)</i></a></div>
                   <div class="card-body">
                       <p class="card-text">A SPA created for the CS 490 Final Project</p>
                   </div>
