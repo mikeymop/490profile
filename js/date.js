@@ -1,6 +1,7 @@
 export class TimeStamp extends Date {
     constructor(time) {
         //takes unix time and makes into a datetime
+        super();
         this.unixtime = Number(time) * 1000;
     }
 
