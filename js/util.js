@@ -9,7 +9,8 @@ export class Util {
     }
 
     create() {
-        console.log("Util created");
+        console.log("creating Util...");
+        this.getSongHistory();
     }
 
     getSongHistory() {
