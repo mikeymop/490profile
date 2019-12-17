@@ -7,6 +7,7 @@ export class Util {
 
     constructor() {
         this.songs = null;
+        this.listens = null;
         this.create();
     }
 
@@ -30,10 +31,8 @@ export class Util {
         });
     }
 
-    createMusicWidget() {
-        console.log("creating music widget");
+    createMusicWidget(data) {
+        console.log(`creating music widget with:\n${data.listens}`);
         let music_widget = document.querySelector('#music-widget');
-        console.log(music_widget);
-        console.log(this.listens);
     }
 }
