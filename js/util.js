@@ -35,11 +35,11 @@ export class Util {
     }
 
     createMusicWidget(data) {
+        console.log(`creating music widget...`);
+
         data = JSON.parse(data);
         this.listens = data.payload.listens;
-        console.log(`creating music widget...`);
         let t = new TimeStamp(1576541156 * 1000);
-        console.log(`listen time is: ${t.getFullYear()}-${t.getMonthName()}`);
         let music_widget = document.querySelector('#music-widget');
         music_widget.class = "card";
         music_widget.innerHTML = `
@@ -72,7 +72,6 @@ export class Util {
 
     addRow(tbody, entry, idx) {
         console.log(`addrow`);
-        console.log(entry);
         let t_stamp = new TimeStamp(Number(entry.listened_at));
         let track = entry.track_metadata;
         let row = document.createElement("tr");
