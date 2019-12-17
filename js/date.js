@@ -5,8 +5,8 @@ export class TimeStamp extends Date {
         this.unixtime = Number(time) * 1000;
     }
 
-    setTime(time){
-        this.time = time;
+    setTime(time) {
+        this.unixtime = time;
     }
 
     getMonthName() {
