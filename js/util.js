@@ -41,10 +41,12 @@ export class Util {
         console.log(`listen time is: ${t.getFullYear()}-${t.getMonthName()}`);
         let music_widget = document.querySelector('#music-widget');
         music_widget.innerHTML = `
-          <h3 class="card-title">Recent Listens:</h3>
-          <div id="disclaimer" class="card-subtitle" mb-2 text-muted>Listen history courtesty of ListenBrainz</div>
+          <h3 class="card-title"> Recent Listens: &#x1F3B6</h3>
+          <div id="disclaimer" class="card-subtitle" mb-2 text-muted>
+            Listen history courtesy of <a href="https://listenbrainz.org/user/mikeymop">ListenBrainz</a>
+          </div>
           <div id="track-list" class="card-body">
-            <table class="table">
+            <table class="table table-condensed" id="listens">
               <thead>
                 <tr>
                   <th>Listen Time:</th>
@@ -60,23 +62,31 @@ export class Util {
         let i = 0;
         for(let entry of this.listens) {
             if(i == 10) { break; }
-            this.addRow(tbody, entry);
+            this.addRow(tbody, entry, i);
             i += 1;
         }
         table.appendChild(tbody);
     }
 
-    addRow(tbody, entry) {
+    addRow(tbody, entry, idx) {
         console.log(`addrow`);
         console.log(entry);
         let t_stamp = new TimeStamp(Number(entry.listened_at));
         let track = entry.track_metadata;
         let row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${t_stamp.getMonthName()} ${t_stamp.getDate()} ${t_stamp.getFullYear()}</td>
-          <td>${track.artist_name}</td>
-          <td>${track.track_name}</td>
-        `;
+        if(idx == 0) {
+            row.innerHTML = `
+              <td> &#x1F3A7 ${t_stamp.getMonthName()} ${t_stamp.getDate()} ${t_stamp.getFullYear()}</td>
+              <td>${track.artist_name}</td>
+              <td>${track.track_name}</td>
+            `;
+        } else {
+            row.innerHTML = `
+              <td>${t_stamp.getMonthName()} ${t_stamp.getDate()} ${t_stamp.getFullYear()}</td>
+              <td>${track.artist_name}</td>
+              <td>${track.track_name}</td>
+            `;
+        }
         tbody.appendChild(row);
     }
 }
