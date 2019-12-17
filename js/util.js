@@ -27,12 +27,13 @@ export class Util {
         }).then((data) => {
             console.log(`fetch got:\n${JSON.stringify(data)}`);
             this.listens = data.listens;
-            this.createMusicWidget(data);
+            this.createMusicWidget(JSON.stringify(data));
         });
     }
 
     createMusicWidget(data) {
-        console.log(`creating music widget with:\n${data.listens}`);
+        let data = JSON.parse(data);
+        console.log(`creating music widget with:\n${data.listens}\n${data}`);
         let music_widget = document.querySelector('#music-widget');
     }
 }
