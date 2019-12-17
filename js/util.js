@@ -1,6 +1,8 @@
 export class Util {
 
     songs = null;
+    listens = null;
+    payload = null;
     widget = null;
 
     constructor() {
@@ -23,11 +25,15 @@ export class Util {
             return response.json();
         }).then((data) => {
             console.log(`fetch got:\n${JSON.stringify(data)}`);
-            createMusicWidget(data);
+            this.listens = data.listens;
+            this.createMusicWidget(data);
         });
     }
 
     createMusicWidget() {
         console.log("creating music widget");
+        let music_widget = document.querySelector('#music-widget');
+        console.log(music_widget);
+        console.log(this.listens);
     }
 }
