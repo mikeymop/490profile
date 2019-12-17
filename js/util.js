@@ -1,3 +1,5 @@
+import { moment } from '../node_modules/moment';
+
 export class Util {
 
     songs = null;
@@ -32,8 +34,18 @@ export class Util {
     }
 
     createMusicWidget(data) {
-        let data = JSON.parse(data);
-        console.log(`creating music widget with:\n${data.listens}\n${data}`);
+        data = JSON.parse(data);
+        this.listens = data.payload.listens;
+        console.log(`creating music widget with:\n${this.listens}`);
+        let t = moment.unix("1576541156").format("MM/DD/YY");
+        console.log(`listen time is: ${t}`);
         let music_widget = document.querySelector('#music-widget');
+        music_widget.innerHTML = `
+          <h3>Recent Listens:</h3>
+          <div id="disclaimer">Listen history courtesty of ListenBrainz</div>
+          <div id="track-list"
+            <div>
+          </div>
+        `;
     }
 }
