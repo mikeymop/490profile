@@ -16,6 +16,7 @@ export class Util {
     create() {
         console.log("creating Util...");
         this.getSongHistory();
+        this.createProjectWidget();
     }
 
     getSongHistory() {
@@ -40,6 +41,7 @@ export class Util {
         let t = new TimeStamp(1576541156 * 1000);
         console.log(`listen time is: ${t.getFullYear()}-${t.getMonthName()}`);
         let music_widget = document.querySelector('#music-widget');
+        music_widget.class = "card";
         music_widget.innerHTML = `
           <h3 class="card-title"> Recent Listens: &#x1F3B6</h3>
           <div id="disclaimer" class="card-subtitle" mb-2 text-muted>
@@ -88,5 +90,34 @@ export class Util {
             `;
         }
         tbody.appendChild(row);
+    }
+
+    createProjectWidget() {
+        let project_widget = document.querySelector("#project-widget");
+        project_widget.innerHTML = `
+          <h3 class="card">Recent Projects:</h3>
+          <table>
+            <tr>
+              <th>
+                <div class="card" style="width: 18rem;">
+                  <img src="http://defrances.co/img/icon.png" class="card-image" style="width: 5rem; height: 5rem"></img>
+                  <div class="card-title">Personal Blog <a href="http://defrances.co"><i>(Link)</i></a></div>
+                  <div class="card-body">
+                      <p class="card-text">My Personal Website, written using node.js and hugo</p>
+                  </div>
+                </div>
+              </th>
+              <th>
+                <div class="card" style="width: 18rem;">
+                  <img src="https://via.placeholder.com/150" class="card-image" style="width: 5rem; height: 5rem"></img>
+                  <div class="card-title">Grader Gater <a href="https://web.njit.edu/~md537/dev"><i>(Link)</i></a></div>
+                  <div class="card-body">
+                      <p class="card-text">A SPA created for the CS 490 Final Project</p>
+                  </div>
+                </div>
+              </th>
+            <tr>
+          </table>
+        `;
     }
 }
