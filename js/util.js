@@ -18,7 +18,7 @@ export class Util {
         fetch(url, {
             "method": "GET",
             "headers": "application/json"
-        }.then((response) => {
+        }).then((response) => {
             return response.json();
         }).then((data) => {
             console.log(`fetch got:\n${JSON.stringify(data)}`);
