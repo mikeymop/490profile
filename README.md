@@ -1,6 +1,12 @@
 # NJIT PROFILE
 
-This is a handmade profile page for my NJIT ACS webpage.
+This is a handmade profile page for my NJIT ACS webpage. This in an excersize in writing a Javascript defined UI using only ES6 modules and no libraries from npm.
+
+The entry point for this site is in [index.html](https://github.com/mikeymop/490profile/blob/master/index.html#L12)
+
+### Music Widget
+
+Music widget is currently defined in `util.js` as needs for this grows it will slowly be moved into it's own module for organization.
 
 ###
 
