@@ -8,8 +8,14 @@ MIT License
     <!-- portable Bootstrap cruft for now -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
+    <script type="text/javascript">
+      import "js/util.js"
+      console.log("starting js...");
+      const util = new Util();
+      console.log(util);
+    </script>
   </head>
-<body>
+<body">
 <!-- Navbar bs -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(292deg,#e00e1f,#dd152d 47%,#750d42);">
   <a class="navbar-brand" href="#">Michael D</a>
@@ -63,6 +69,7 @@ MIT License
             <h2>Hello There!</h2>
               <p>I am Michael D, a CompSci Sophomore. I use this page as a glossary to dump useful links and tips that people may wish to easily reference. If you find this page helpful, or would like to correct information listed here please <a href="mailto:md537@njit.edu">email me</a>.</p>
               <p>I would love the encouragement!</p>
+            <div id="music-widget"></div>
             <h2>School Links</h2>
               <p>
               <ul>
