@@ -17,9 +17,9 @@ export class Util {
         let url = "https://api.listenbrainz.org/1/user/mikeymop/listens"
         console.log(`Getting listen history from:\n${url}`);
         fetch(url, {
-            "method": "GET",
-            "headers": "application/json"
+            "method": 'GET',
         }).then((response) => {
+            console.log(`response:\n${response}`);
             return response.json();
         }).then((data) => {
             console.log(`fetch got:\n${JSON.stringify(data)}`);
