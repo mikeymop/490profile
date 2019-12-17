@@ -1,4 +1,4 @@
-import { Date } from './date.js';
+import { TimeStamp } from './date.js';
 
 export class Util {
 
@@ -38,7 +38,7 @@ export class Util {
         this.listens = data.payload.listens;
         console.log(`creating music widget with:\n${this.listens}`);
         let t = new Date("1576541156");
-        console.log(`listen time is: ${t}`);
+        console.log(`listen time is: ${t.getTimeStamp()}`);
         let music_widget = document.querySelector('#music-widget');
         music_widget.innerHTML = `
           <h3>Recent Listens:</h3>
