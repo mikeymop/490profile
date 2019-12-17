@@ -37,8 +37,8 @@ export class Util {
         data = JSON.parse(data);
         this.listens = data.payload.listens;
         console.log(`creating music widget with:\n${this.listens}`);
-        let t = new Date(1576541156 * 1000);
-        console.log(`listen time is: ${t.getTimeStamp()}`);
+        let t = new TimeStamp(1576541156 * 1000);
+        console.log(`listen time is: ${t.getFullYear()}-${t.getMonthName()}`);
         let music_widget = document.querySelector('#music-widget');
         music_widget.innerHTML = `
           <h3>Recent Listens:</h3>
