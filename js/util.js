@@ -1,4 +1,4 @@
-import { moment } from '../node_modules/moment';
+import { Date } from './date.js';
 
 export class Util {
 
@@ -37,7 +37,7 @@ export class Util {
         data = JSON.parse(data);
         this.listens = data.payload.listens;
         console.log(`creating music widget with:\n${this.listens}`);
-        let t = moment.unix("1576541156").format("MM/DD/YY");
+        let t = new Date("1576541156");
         console.log(`listen time is: ${t}`);
         let music_widget = document.querySelector('#music-widget');
         music_widget.innerHTML = `
